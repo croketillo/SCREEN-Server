@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  screen:
+    image: screen
+    init: true
+    ports:
+      - 8800:8800
+    volumes:
+      - ".:/app"
+# OPTIONAL
+#    networks: 
+#      - proxy
+    restart: unless-stopped
+
+#OPTIONAL
+#networks:
+#   proxy:
+#     external: true
+
