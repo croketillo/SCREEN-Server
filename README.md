@@ -11,7 +11,8 @@ Prepare the images to be displayed in a directory. Keep in mind that the images 
 
 #### STEP 1 - Clone the repository and navigate to the directory
 
-git clone *******************
+git clone https://github.com/croketillo/screen-server.git
+
 cd screen-server
 
 #### STEP 2 - Run config.sh and follow the instructions:
