@@ -1,3 +1,12 @@
+#
+#		SCREEN-SERVER
+#		Version 1.0
+#
+#	Create a server http to serve images por advertising screens
+#
+# 	Author: Croketillo (croketillo@gmail.com)
+#	GITHUB: https://github.com/croketillo
+
 import http.server
 import socketserver
 import threading
