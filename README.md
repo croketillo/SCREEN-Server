@@ -4,6 +4,7 @@
 
 SCREEN-SERVER is an open-source client-server program that serves images through an HTTP server.
 
+
 ## SERVER
 ### First things first.
 
