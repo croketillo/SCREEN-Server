@@ -1,6 +1,8 @@
+![easyscreen](https://github.com/croketillo/screen-server/assets/131451882/86b1b0e1-244c-4550-a7bc-8f92c62086b1)
+
 # SCREEN-SERVER
 
-Screen-server is an open-source client-server program that serves images through an HTTP server.
+SCREEN-SERVER is an open-source client-server program that serves images through an HTTP server.
 
 ## SERVER
 ### First things first.
