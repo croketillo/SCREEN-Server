@@ -28,12 +28,12 @@ You can also do it manually by placing the images in the ./images folder and mod
 
 python3 screen.py
 
-#### DOCKER
-##### Create a Docker image with:
+##### DOCKER
+###### Create a Docker image with:
 
 docker build -t screen .
 
-##### Start the Docker container with:
+###### Start the Docker container with:
 
 docker-compose up -d
 
