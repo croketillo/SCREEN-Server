@@ -14,6 +14,26 @@ echo -e """${PINK}
         Wizard-Config v1.0${NC}
 """
 
+# Function to prompt for a valid port number
+read_port() {
+    local port
+    while true; do
+        read -p "[ >> ] Enter the port number for the server (between 1 and 65535): " port
+        if [[ $port =~ ^[1-9][0-9]{0,4}$ && $port -ge 1 && $port -le 65535 ]]; then
+            echo "$port"
+            break
+        else
+            echo "[ERROR] Invalid port number. Please enter a valid port."
+        fi
+    done
+}
+
+# Get the port number from the user
+port=$(read_port)
+
+# Update the port in the screen.py file
+sed -i "s/PORT = [0-9]\+/PORT = $port/" screen.py
+
 # User-provided image folder path
 read -p "[ >> ] Enter the path of the folder with images: " image_folder
 
