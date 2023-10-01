@@ -38,6 +38,18 @@ docker build -t screen .
 
 docker-compose up -d
 
+CHECK THE SERVER RUNNING 
+
+http://{YOUR_HOST}/get_images
+
+###### For update images:
+
+./config.sh
+
+docker restart {YOUR_CONTAINER}
+
+
+
 ## CLIENT
 
 The client is prepared to run on small Linux machines installed for promotional and marketing screens by running the Python script or the binary.
