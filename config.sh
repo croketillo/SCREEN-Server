@@ -17,6 +17,9 @@ echo -e """${PINK}
 # User-provided image folder path
 read -p "[ >> ] Enter the path of the folder with images: " image_folder
 
+# Remove existing images from the "images" directory
+rm -f images/*
+
 # Check if the image folder exists
 if [ ! -d "$image_folder" ]; then
     echo -e "\n[ ${RED}ERROR${NC} ] The specified image folder does not exist."

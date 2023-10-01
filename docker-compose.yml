@@ -2,7 +2,7 @@ version: '3'
 
 services:
   screen:
-    image: screen
+    image: croketillo/screen-server:v0.0
     init: true
     ports:
       - 8800:8800
