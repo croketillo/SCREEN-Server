@@ -20,7 +20,9 @@ cd screen-server
 
 ./config.sh
 
-Specify the path where you store the images you want to display, and it will automatically ask you how long you want to display each image. The data is loaded into the "config.json" file.
+You has to specify the server port.
+
+Then, specify the path where you store the images you want to display, and it will automatically ask you how long you want to display each image. The data is loaded into the "config.json" file.
 
 You can also do it manually by placing the images in the ./images folder and modifying the "config.json" file.
 
@@ -44,7 +46,7 @@ http://{YOUR_HOST}/get_images
 
 
 
-###### For update images:
+##### For update images:
 
 ./config.sh
 
