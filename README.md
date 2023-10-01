@@ -54,6 +54,8 @@ docker restart {YOUR_CONTAINER}
 
 
 
+
+
 ## CLIENT
 
 The client is prepared to run on small Linux machines installed for promotional and marketing screens by running the Python script or the binary.
