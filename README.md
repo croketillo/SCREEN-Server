@@ -38,9 +38,11 @@ docker build -t screen .
 
 docker-compose up -d
 
-CHECK THE SERVER RUNNING 
+###### CHECK THE SERVER RUNNING 
 
 http://{YOUR_HOST}/get_images
+
+
 
 ###### For update images:
 
