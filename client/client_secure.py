@@ -7,7 +7,7 @@ import time
 
 # Server Configuration
 SERVER_URL = "http://localhost:8800/get_image"  # Cambia la URL si el servidor está en otro lugar
-SECRET_KEY = "tu_clave_secreta"  # Reemplaza con tu clave secreta
+SECRET_KEY = "123456"
 
 print("""
 

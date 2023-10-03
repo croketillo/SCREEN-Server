@@ -16,7 +16,7 @@ import os
 import json
 
 # Server Configuration
-PORT = 8800
+PORT = 80
 IMAGE_FOLDER = "images"  # Folder where images are stored
 CONFIG_FILE = "config.json"  # Configuration file
 

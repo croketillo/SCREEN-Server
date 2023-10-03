@@ -11,7 +11,7 @@ IMAGE_FOLDER = "images"  # Carpeta donde se almacenan las imágenes
 CONFIG_FILE = "config.json"  # Archivo de configuración
 
 # Secret key for generating and validating tokens
-SECRET_KEY = "tu_clave_secreta"  # Reemplaza con tu propia clave secreta
+SECRET_KEY = "123456"
 
 # Variables para almacenar la configuración y las imágenes
 config = {}

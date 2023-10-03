@@ -28,6 +28,17 @@ read_port() {
     done
 }
 
+
+# Prompt the user for a secret key
+read -s -p "[ >> ] Enter the secret key: " secret_key
+echo ""
+
+# Update SECRET_KEY in screen_secure.py
+sed -i "s/SECRET_KEY = .*/SECRET_KEY = \"$secret_key\"/" screen_secure.py
+
+# Update SECRET_KEY in client/client_secure.py
+sed -i "s/SECRET_KEY = .*/SECRET_KEY = \"$secret_key\"/" client/client_secure.py
+
 # Get the port number from the user
 port=$(read_port)
 
