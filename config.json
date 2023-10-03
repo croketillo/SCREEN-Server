@@ -1,4 +1,4 @@
 {"config": {}, "images": [
-{"name": "promo2.jpg", "duration": 10},
-{"name": "promo1.jpg", "duration": 5},
+{"name": "promo2.jpg", "duration": 5},
+{"name": "promo1.jpg", "duration": 10},
 {"name": "promo3.jpg", "duration": 5}]}

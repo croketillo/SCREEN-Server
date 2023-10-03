@@ -43,7 +43,7 @@ sed -i "s/SECRET_KEY = .*/SECRET_KEY = \"$secret_key\"/" client/client_secure.py
 port=$(read_port)
 
 # Update the port in the screen.py file
-sed -i "s/PORT = [0-9]\+/PORT = $port/" screen.py
+sed -i "s/PORT = [0-9]\+/PORT = $port/" screen_secure.py
 
 # User-provided image folder path
 read -p "[ >> ] Enter the path of the folder with images: " image_folder
