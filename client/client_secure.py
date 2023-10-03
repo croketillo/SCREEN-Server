@@ -6,7 +6,8 @@ from io import BytesIO
 import time
 
 # Server Configuration
-SERVER_URL = "http://localhost:8800/get_image"  # Cambia la URL si el servidor está en otro lugar
+PORT=80
+SERVER_URL = f"http://localhost:{PORT}/get_image"  # Cambia la URL si el servidor está en otro lugar
 SECRET_KEY = "123456"
 
 print("""
