@@ -11,7 +11,9 @@ echo -e """${PINK}
 ┏━┓┏━╸┏━┓┏━╸┏━╸┏┓╻ ┏━┓┏━╸┏━┓╻ ╻┏━╸┏━┓
 ┗━┓┃  ┣┳┛┣╸ ┣╸ ┃┗┫ ┗━┓┣╸ ┣┳┛┃┏┛┣╸ ┣┳┛
 ┗━┛┗━╸╹┗╸┗━╸┗━╸╹ ╹╹┗━┛┗━╸╹┗╸┗┛ ┗━╸╹┗╸
-        Wizard-Config v1.0${NC}
+        Wizard-Config v1.2${NC}
+
+By: Croketillo (croketillo@gmail.com)
 """
 
 # Function to prompt for a valid port number
@@ -34,16 +36,16 @@ read -s -p "[ >> ] Enter the secret key: " secret_key
 echo ""
 
 # Update SECRET_KEY in screen_secure.py
-sed -i "s/SECRET_KEY = .*/SECRET_KEY = \"$secret_key\"/" screen_secure.py
+sed -i "s/SECRET_KEY = .*/SECRET_KEY = \"$secret_key\"/" screen.py
 
 # Update SECRET_KEY in client/client_secure.py
-sed -i "s/SECRET_KEY = .*/SECRET_KEY = \"$secret_key\"/" client/client_secure.py
+sed -i "s/SECRET_KEY = .*/SECRET_KEY = \"$secret_key\"/" client/client.py
 
 # Get the port number from the user
 port=$(read_port)
 
 # Update the port in the screen.py file
-sed -i "s/PORT = [0-9]\+/PORT = $port/" screen_secure.py
+sed -i "s/PORT = [0-9]\+/PORT = $port/" screen.py
 
 # User-provided image folder path
 read -p "[ >> ] Enter the path of the folder with images: " image_folder

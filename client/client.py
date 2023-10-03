@@ -1,3 +1,16 @@
+"""
+		SCREEN-SERVER // CLIENT
+		Version 1.1
+
+	Create a server http to serve images por advertising screens
+
+ 	Author: Croketillo (croketillo@gmail.com)
+	GITHUB: https://github.com/croketillo
+"""
+
+
+
+
 from os import environ
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 import requests
@@ -6,20 +19,25 @@ from io import BytesIO
 import time
 
 # Server Configuration
-SERVER_URL = "http://localhost:8080/get_image"  # Change the URL if the server is elsewhere
+
+
+SECRET_KEY = "Lalala"
 
 print("""
 
 ┏━┓┏━╸┏━┓┏━╸┏━╸┏┓╻   ┏━╸╻  ╻┏━╸┏┓╻╺┳╸
 ┗━┓┃  ┣┳┛┣╸ ┣╸ ┃┗┫╺━╸┃  ┃  ┃┣╸ ┃┗┫ ┃ 
 ┗━┛┗━╸╹┗╸┗━╸┗━╸╹ ╹   ┗━╸┗━╸╹┗━╸╹ ╹ ╹ 
+Version 1.1
 
-Version 1.0
+By: Croketillo (croketillo@gmail.com)      
+      
 
 Press [ESC] to quit.
 """)
 
-SERVER_URL = input("Listen HOST: ")
+print("Enter the server URL (example: http://localhost/get_image)")
+SERVER_URL = input(">>> URL: ")
 
 # Initialize pygame
 pygame.init()
@@ -37,8 +55,9 @@ running = True
 
 while running:
     try:
-        # Request the image from the server
-        response = requests.get(SERVER_URL)
+        # Request the image from the server with the token in the headers
+        headers = {"Authorization": f"Bearer {SECRET_KEY}"}
+        response = requests.get(SERVER_URL, headers=headers)
         if response.status_code == 200:
             image_data = BytesIO(response.content)
             image = pygame.image.load(image_data)

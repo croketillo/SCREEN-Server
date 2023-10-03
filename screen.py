@@ -1,12 +1,10 @@
-"""
-		SCREEN-SERVER
-		Version 1.0git@github.com:croketillo/screen-server.git
+# SCREEN-SERVER
+# Version 1.1
 
-	Create a server http to serve images por advertising screens
+# Create an HTTP server to serve images for advertising screens
 
- 	Author: Croketillo (croketillo@gmail.com)
-	GITHUB: https://github.com/croketillo
-"""
+# Author: Croketillo (croketillo@gmail.com)
+# GITHUB: https://github.com/croketillo
 
 import http.server
 import socketserver
@@ -15,10 +13,16 @@ import time
 import os
 import json
 
+print("\nSCREEN-SERVER \nVersion 1.1 \n\nBy: Croketillo (croketillo@gmail.com)")
+print("\n[-----------------------------------------------]\n\n")
+
 # Server Configuration
 PORT = 80
 IMAGE_FOLDER = "images"  # Folder where images are stored
 CONFIG_FILE = "config.json"  # Configuration file
+
+# Secret key for generating and validating tokens
+SECRET_KEY = "Lalala"
 
 # Variables to store configuration and images
 config = {}
@@ -26,9 +30,8 @@ image_list = []
 current_image_data = None
 current_image_index = 0
 
-
+# Function to load configuration from the JSON file
 def load_config():
-    # Function to load configuration from JSON file
     global config, image_list
     try:
         with open(CONFIG_FILE, "r") as config_file:
@@ -38,9 +41,8 @@ def load_config():
     except FileNotFoundError:
         print(f"The configuration file {CONFIG_FILE} is not found.")
 
-
+# Function to load the next image and its display duration
 def load_next_image():
-    # Function to load the next image and its display duration
     global current_image_data, current_image_index
     if not image_list:
         return None  # Return None if there are no images in the configuration
@@ -59,23 +61,32 @@ def load_next_image():
     current_image_index = (current_image_index + 1) % len(image_list)
     return duration
 
-
+# Function to serve the current image
 def serve_current_image():
-    # Function to serve the current image
     if current_image_data:
         return current_image_data
 
-
+# Function to change the current image periodically
 def change_image_periodically():
-    # Function to change the current image periodically
     while True:
         duration = load_next_image()
         if duration is not None:
             time.sleep(duration)
 
+# HTTP Server Function
 class ImageHandler(http.server.BaseHTTPRequestHandler):
-    # HTTP Server Function
     def do_GET(self):
+        # Get the token from the Authorization header
+        token = self.headers.get("Authorization")
+
+        # Verify if the token is valid
+        if token != f"Bearer {SECRET_KEY}":
+            self.send_response(401)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Unauthorized")
+            return
+
         if self.path == "/get_image":
             self.send_response(200)
             self.send_header("Content-type", "image/jpeg")
@@ -100,13 +111,6 @@ if __name__ == "__main__":
 
     # Start the server
     with socketserver.TCPServer(("", PORT), ImageHandler) as httpd:
-        print("""
-┏━┓┏━╸┏━┓┏━╸┏━╸┏┓╻ ┏━┓┏━╸┏━┓╻ ╻┏━╸┏━┓
-┗━┓┃  ┣┳┛┣╸ ┣╸ ┃┗┫ ┗━┓┣╸ ┣┳┛┃┏┛┣╸ ┣┳┛
-┗━┛┗━╸╹┗╸┗━╸┗━╸╹ ╹╹┗━┛┗━╸╹┗╸┗┛ ┗━╸╹┗╸
-
-Version 1.0
-
-        """)
-        print(f"Server RUNNING at (http://0.0.0.0/get_image) in {PORT}:")
+        print(f"[ OK ] Server RUN on port {PORT}...")
         httpd.serve_forever()
+
