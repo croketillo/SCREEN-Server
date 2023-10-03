@@ -21,7 +21,7 @@ import time
 # Server Configuration
 
 
-SECRET_KEY = "Lalala"
+SECRET_KEY = "yourpassword"
 
 print("""
 

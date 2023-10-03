@@ -22,7 +22,7 @@ IMAGE_FOLDER = "images"  # Folder where images are stored
 CONFIG_FILE = "config.json"  # Configuration file
 
 # Secret key for generating and validating tokens
-SECRET_KEY = "Lalala"
+SECRET_KEY = "yourpassword"
 
 # Variables to store configuration and images
 config = {}
