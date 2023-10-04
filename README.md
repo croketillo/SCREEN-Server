@@ -20,7 +20,7 @@ Prepare the images to be displayed in a directory. Keep in mind that the images 
 
 ```./config.sh```
 
-You has to specify the server port
+You has to specify the server port and a PASSWORD
 
 
 #### STEP 3 - Choose an execution mode:
