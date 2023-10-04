@@ -12,7 +12,7 @@ Prepare the images to be displayed in a directory. Keep in mind that the images 
 
 #### STEP 1 - Clone the repository and navigate to the directory
 
-'''git clone https://github.com/croketillo/screen-server.git'''
+```git clone https://github.com/croketillo/screen-server.git```
 
 cd screen-server
 
