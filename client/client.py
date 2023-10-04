@@ -21,7 +21,7 @@ import time
 # Server Configuration
 
 
-SECRET_KEY = "yourpassword"
+SECRET_KEY = "your_pasww"
 
 print("""
 
@@ -36,7 +36,7 @@ By: Croketillo (croketillo@gmail.com)
 Press [ESC] to quit.
 """)
 
-print("Enter the server URL (example: http://localhost/get_image)")
+print("Enter the server URL (example: http://localhost:8080/get_image)")
 SERVER_URL = input(">>> URL: ")
 
 # Initialize pygame

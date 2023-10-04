@@ -17,12 +17,12 @@ print("\nSCREEN-SERVER \nVersion 1.1 \n\nBy: Croketillo (croketillo@gmail.com)")
 print("\n[-----------------------------------------------]\n\n")
 
 # Server Configuration
-PORT = 80
+PORT = 8080
 IMAGE_FOLDER = "images"  # Folder where images are stored
 CONFIG_FILE = "config.json"  # Configuration file
 
 # Secret key for generating and validating tokens
-SECRET_KEY = "yourpassword"
+SECRET_KEY = "your_pasww"
 
 # Variables to store configuration and images
 config = {}
