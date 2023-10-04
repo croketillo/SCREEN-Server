@@ -14,11 +14,11 @@ Prepare the images to be displayed in a directory. Keep in mind that the images 
 
 ```git clone https://github.com/croketillo/screen-server.git```
 
-cd screen-server
+```cd screen-server ```
 
 #### STEP 2 - Run config.sh and follow the instructions:
 
-./config.sh
+```./config.sh```
 
 You has to specify the server port
 
@@ -26,16 +26,16 @@ You has to specify the server port
 #### STEP 3 - Choose an execution mode:
 ##### Directly run the script
 
-python3 screen.py
+```python3 screen.py```
 
 ##### DOCKER
 ###### Create a Docker image with:
 
-docker build -t screen .
+```docker build -t screen .```
 
-###### Start the Docker container with:
+###### Start the Docker container with Docker-compose:
 
-docker-compose up -d
+```docker-compose up -d```
 
 ###### CHECK THE SERVER RUNNING 
 
@@ -45,7 +45,7 @@ http://{YOUR_HOST}/get_images
 
 ##### For update images:
 
-./update_imges.sh
+```./update_imges.sh```
 
 Then, specify the path where you store the images you want to display, and it will automatically ask you how long you want to display each image. The data is loaded into the "config.json" file.
 
