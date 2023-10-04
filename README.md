@@ -12,7 +12,7 @@ Prepare the images to be displayed in a directory. Keep in mind that the images 
 
 #### STEP 1 - Clone the repository and navigate to the directory
 
-git clone https://github.com/croketillo/screen-server.git
+'git clone https://github.com/croketillo/screen-server.git'
 
 cd screen-server
 
@@ -20,14 +20,11 @@ cd screen-server
 
 ./config.sh
 
-You has to specify the server port.
+You has to specify the server port
 
-Then, specify the path where you store the images you want to display, and it will automatically ask you how long you want to display each image. The data is loaded into the "config.json" file.
-
-You can also do it manually by placing the images in the ./images folder and modifying the "config.json" file.
 
 #### STEP 3 - Choose an execution mode:
-##### Directly run the script or the binary (Not recommended)
+##### Directly run the script
 
 python3 screen.py
 
@@ -48,18 +45,22 @@ http://{YOUR_HOST}/get_images
 
 ##### For update images:
 
-./config.sh
+./update_imges.sh
+
+Then, specify the path where you store the images you want to display, and it will automatically ask you how long you want to display each image. The data is loaded into the "config.json" file.
+
+You can also do it manually by placing the images in the ./images folder and modifying the "config.json" file.
+
+
 
 docker restart {YOUR_CONTAINER}
 
 
 
-
-
 ## CLIENT
 
-The client is prepared to run on small Linux machines installed for promotional and marketing screens by running the Python script or the binary.
+The client is prepared to run on small Linux machines installed for promotional and marketing screens by running the Python script.
 
-Simply load the binary onto the client machine and specify the URL of the server; it will immediately load the images with the configuration loaded on the server indefinitely until you press ESC
+Simply load the script  onto the client machine and specify the URL of the server; it will immediately load the images with the configuration loaded on the server indefinitely until you press ESC
 
 
