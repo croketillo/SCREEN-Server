@@ -1,4 +1,5 @@
-![log](https://github.com/croketillo/screen-server/assets/131451882/1f365bd5-bb93-4e3c-9e12-e9db1ee49127)
+![logo](https://github.com/croketillo/SCREEN-Server/assets/131451882/b01b209d-e4a6-4304-bda3-985651cfa992)
+
 
 # SCREEN-SERVER
 
