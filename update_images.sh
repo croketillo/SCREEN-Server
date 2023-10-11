@@ -6,17 +6,7 @@ GREEN='\033[1;32m'
 PINK='\033[1;35m'
 NC='\033[0m'
 
-echo -e """${PINK}
-
-┏━┓┏━╸┏━┓┏━╸┏━╸┏┓╻ ┏━┓┏━╸┏━┓╻ ╻┏━╸┏━┓
-┗━┓┃  ┣┳┛┣╸ ┣╸ ┃┗┫ ┗━┓┣╸ ┣┳┛┃┏┛┣╸ ┣┳┛
-┗━┛┗━╸╹┗╸┗━╸┗━╸╹ ╹╹┗━┛┗━╸╹┗╸┗┛ ┗━╸╹┗╸
-        Update images v1.2${NC}
-
-By: Croketillo (croketillo@gmail.com)
-"""
-
-# Variable para rastrear errores
+# Variable to track errors
 error_occurred=false
 
 # User-provided image folder path
@@ -35,13 +25,8 @@ else
         echo -e "\n[ ${RED}ERROR${NC} ] No JPG or PNG files were found in the specified folder."
         error_occurred=true
     else
-        # Remove existing images from the "images" directory
-        rm -f images/*
-
-        # Remove all existing entries in the config.json file
-        echo "{\"config\": {}, \"images\": [" > config.json
-
-        # Iterate over the found files
+        # Iterate over the found files and prompt for exposure time
+        image_list="\"images\": ["
         first_iteration=true
         for image_path in $image_files; do
             # Get the file name without the path
@@ -50,31 +35,34 @@ else
             # Request exposure time in seconds
             read -p "[ >> ] Exposure time for $image_name (in seconds): " exposure_time
 
-            # Check if it's the first iteration
             if [ "$first_iteration" = true ]; then
                 first_iteration=false
             else
-                # Add a comma before the next entry
-                echo "," >> config.json
+                image_list="$image_list, "
             fi
 
-            # Add the information to the config.json file
-            json_line="{\"name\": \"$image_name\", \"duration\": $exposure_time}"
-            echo -n "$json_line" >> config.json
-
-            # Copy the image to the "images" directory
-            cp "$image_path" "images/"
+            image_list="$image_list{\"name\": \"$image_name\", \"duration\": $exposure_time}"
         done
+        image_list="$image_list]"
 
-        # Close the config.json file
-        echo "]}" >> config.json
+        # Create a temporary JSON file
+        tmp_file=$(mktemp)
+        echo "{" > $tmp_file
+        echo "    \"config\": {" >> $tmp_file
+        echo "        \"SECRET_KEY\": \"YOUR_PASSWORD\"," >> $tmp_file
+        echo "        \"PORT\": 12345" >> $tmp_file
+        echo "    }," >> $tmp_file
+        echo "    $image_list" >> $tmp_file
+        echo "}" >> $tmp_file
+
+        # Replace the original config.json with the temporary file
+        mv $tmp_file config.json
+
+        echo -e "\n[ ${GREEN}OK${NC} ] Updated images successfully"
     fi
 fi
 
-# Verifica si se produjeron errores
-if [ "$error_occurred" = false ]; then
-    echo -e "\n[ ${GREEN}OK${NC} ] Updated images successfully"
-else
+# Check if errors occurred
+if [ "$error_occurred" = true ]; then
     echo -e "\n[ ${RED}ERROR${NC} ] There were errors during the execution."
 fi
-

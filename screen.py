@@ -13,17 +13,12 @@ import time
 import os
 import json
 
-print("\nSCREEN-SERVER \nVersion 1.1 \n\nBy: Croketillo (croketillo@gmail.com)")
+print("\nSCREEN-SERVER \nVersion 1.3 \n\nBy: Croketillo (croketillo@gmail.com)")
 print("\n[-----------------------------------------------]\n\n")
 
 # Server Configuration
-PORT = 8080
-IMAGE_FOLDER = "images"  # Folder where images are stored
 CONFIG_FILE = "config.json"  # Configuration file
-
-# Secret key for generating and validating tokens
-SECRET_KEY = "your_pasww"
-
+IMAGE_FOLDER = "images"
 # Variables to store configuration and images
 config = {}
 image_list = []
@@ -80,7 +75,8 @@ class ImageHandler(http.server.BaseHTTPRequestHandler):
         token = self.headers.get("Authorization")
 
         # Verify if the token is valid
-        if token != f"Bearer {SECRET_KEY}":
+        secret_key = config.get('SECRET_KEY')
+        if token != f"Bearer {secret_key}":
             self.send_response(401)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
@@ -110,7 +106,6 @@ if __name__ == "__main__":
     image_change_timer_thread.start()
 
     # Start the server
-    with socketserver.TCPServer(("", PORT), ImageHandler) as httpd:
-        print(f"[ OK ] Server RUN on port {PORT}...")
+    with socketserver.TCPServer(("", config.get('PORT', 8080)), ImageHandler) as httpd:
+        print(f"[ OK ] Server RUN on port {config.get('PORT', 8080)}...")
         httpd.serve_forever()
-

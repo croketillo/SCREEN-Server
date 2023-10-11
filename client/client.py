@@ -1,6 +1,6 @@
 """
 		SCREEN-SERVER // CLIENT
-		Version 1.1
+		Version 1.2
 
 	Create a server http to serve images por advertising screens
 
@@ -21,8 +21,6 @@ import time
 # Server Configuration
 
 
-SECRET_KEY = "your_pasww"
-
 print("""
 
 ┏━┓┏━╸┏━┓┏━╸┏━╸┏┓╻   ┏━╸╻  ╻┏━╸┏┓╻╺┳╸
@@ -38,7 +36,7 @@ Press [ESC] to quit.
 
 print("Enter the server URL (example: http://localhost:8080/get_image)")
 SERVER_URL = input(">>> URL: ")
-
+SECRET_KEY = input(">>> Enter the KEY: ")
 # Initialize pygame
 pygame.init()
 
