@@ -13,7 +13,7 @@ echo -e """${PINK}
 ┏━┓┏━╸┏━┓┏━╸┏━╸┏┓╻ ┏━┓┏━╸┏━┓╻ ╻┏━╸┏━┓
 ┗━┓┃  ┣┳┛┣╸ ┣╸ ┃┗┫ ┗━┓┣╸ ┣┳┛┃┏┛┣╸ ┣┳┛
 ┗━┛┗━╸╹┗╸┗━╸┗━╸╹ ╹╹┗━┛┗━╸╹┗╸┗┛ ┗━╸╹┗╸
-        Wizard-Config v1.2${NC}
+        Wizard-Config v1.3${NC}
 
 By: Croketillo (croketillo@gmail.com)
 """
@@ -60,7 +60,7 @@ fi
 # Update the secret key in the config.json file
 echo "Updating SECRET_KEY in config.json"
 echo "$secret_key" > temp_secret_key.txt
-python <<EOF
+python3 <<EOF
 import json
 
 # Read the current config.json
@@ -93,7 +93,7 @@ port=$(read_port)
 
 # Update the port in the config.json file
 echo "Updating PORT in config.json"
-python <<EOF
+python3 <<EOF
 import json
 
 # Read the current config.json
