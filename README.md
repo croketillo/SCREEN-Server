@@ -3,7 +3,7 @@
 
 # SCREEN-SERVER
 
-SCREEN-SERVER is an open-source client-server program that serves images through an HTTP server for advertising screens.
+SCREEN-SERVER is an open-source client-server program that serves images through an HTTP server for remote advertising screens.
 
 
 ## SERVER
