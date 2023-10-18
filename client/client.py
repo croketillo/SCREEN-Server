@@ -17,22 +17,18 @@ import requests
 import pygame
 from io import BytesIO
 import time
-
+from colorama import Fore
 # Server Configuration
 
 
-print("""
-
-┏━┓┏━╸┏━┓┏━╸┏━╸┏┓╻   ┏━╸╻  ╻┏━╸┏┓╻╺┳╸
-┗━┓┃  ┣┳┛┣╸ ┣╸ ┃┗┫╺━╸┃  ┃  ┃┣╸ ┃┗┫ ┃ 
-┗━┛┗━╸╹┗╸┗━╸┗━╸╹ ╹   ┗━╸┗━╸╹┗━╸╹ ╹ ╹ 
-Version 1.1
+print(Fore.LIGHTGREEN_EX +"""
+ _______ _______  ______ _______ _______ __   _     _______        _____ _______ __   _ _______
+ |______ |       |_____/ |______ |______ | \  | ___ |       |        |   |______ | \  |    |   
+ ______| |_____  |    \_ |______ |______ |  \_|     |_____  |_____ __|__ |______ |  \_|    |   
+"""+Fore.RESET+"""				Client for SCREEEN-Server			    Version 1.2
 
 By: Croketillo (croketillo@gmail.com)      
-      
-
-Press [ESC] to quit.
-""")
+Press [ESC] to quit.\n""")
 
 print("Enter the server URL (example: http://localhost:8080/get_image)")
 SERVER_URL = input(">>> URL: ")

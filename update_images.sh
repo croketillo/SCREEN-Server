@@ -9,6 +9,17 @@ NC='\033[0m'
 # Variable to track errors
 error_occurred=false
 
+echo -e """${GREEN}
+
+ _______ _______  ______ _______ _______ __   _     _______ _______  ______ _    _ _______  ______
+ |______ |       |_____/ |______ |______ | \  | ___ |______ |______ |_____/  \  /  |______ |_____/
+ ______| |_____  |    \_ |______ |______ |  \_|     ______| |______ |    \_   \/   |______ |    \_
+                                                                                                  
+                                         UPDATE IMAGES${NC}
+
+By: Croketillo (croketillo@gmail.com)
+"""
+
 # User-provided image folder path
 read -p "[ >> ] Enter the path of the folder with images: " image_folder
 
