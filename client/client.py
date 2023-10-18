@@ -2,7 +2,7 @@
 		SCREEN-SERVER // CLIENT
 		Version 1.2
 
-	Create a server http to serve images por advertising screens
+	       Client for SCREEN-Server
 
  	Author: Croketillo (croketillo@gmail.com)
 	GITHUB: https://github.com/croketillo
@@ -83,6 +83,6 @@ while running:
     # Return to the beginning of the folder if images run out
     if response.status_code != 200:
         response = requests.get(SERVER_URL)
-        time.sleep(2)  # Give the server time to change the image
+        time.sleep(1.5)  # Give the server time to change the image
 
 pygame.quit()
