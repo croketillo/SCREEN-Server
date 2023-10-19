@@ -1,19 +1,34 @@
-# Use a lightweight Alpine Linux base image
-FROM alpine:3.13
+###############################################################################
+## Final image
+###############################################################################
+FROM alpine:3.18
 
-# Copy the Python script to the container
-COPY . /app
+LABEL maintainer="CROKETILLO (croketillo@gmail.com)
 
-# Set the working directory
+ENV VIRTUAL_ENV=/app/.venv \
+    PATH="/app/.venv/bin:$PATH" \
+    PYTHONIOENCODING=utf-8 \
+    PYTHONUNBUFFERED=1 \
+    USER=app \
+    UID=1000
+
+RUN echo "**** install Python ****" && \
+    apk add --update --no-cache \
+            python3~=3.11 && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY entrypoint.sh ./src /app/
+
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/${USER}" \
+    --shell "/sbin/nologin" \
+    --uid "${UID}" \
+    "${USER}" && \
+    chown -R app:app /app
+
 WORKDIR /app
+USER app
 
-# Install Python and pip
-RUN apk --update add python3
-
-# Expose the port
-EXPOSE 8800
-
-# Run the Python script
-CMD ["python3", "screen.py"]
-
-
+CMD ["/bin/sh", "/app/run.sh"]
