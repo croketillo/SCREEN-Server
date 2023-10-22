@@ -7,7 +7,7 @@ SCREEN-SERVER is an open-source client-server program that serves images through
 
 
 ## SERVER
-### :exclamation: First things first.
+### :exclamation: :exclamation: :exclamation: First things first.
 
 Prepare the images to be displayed in a directory. Keep in mind that the images should have the resolution and aspect ratio suitable for the screen where they will be displayed since SCREEN-CLIENT detects the screen and resizes them accordingly.
 
@@ -28,7 +28,7 @@ To enter the configuration menu:
 
 To upload new images you must enter the full path of the directory where you store your images locally. (Ex.  /home/user/new_images )
 
-***Remember to restart the server so that the changes are applied if you are using docker***
+:point_right: ***Remember to restart the server so that the changes are applied if you are using docker***
 
 
 
