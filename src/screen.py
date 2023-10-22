@@ -106,6 +106,7 @@ if __name__ == "__main__":
     image_change_timer_thread.start()
 
     # Start the server
-    with socketserver.TCPServer(("", config.get('PORT', 8080)), ImageHandler) as httpd:
+    port=config.get('PORT', 8080)
+    with socketserver.TCPServer(("",int(port) ), ImageHandler) as httpd:
         print(f"[ OK ] Server RUN on port {config.get('PORT', 8080)}...")
         httpd.serve_forever()

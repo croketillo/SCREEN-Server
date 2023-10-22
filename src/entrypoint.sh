@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2021 Lorenzo Carbonell <a.k.a. atareao>
+# Copyright (c) 2023 Croketillo [ https://github.com/croketillo ]
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal

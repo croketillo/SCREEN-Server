@@ -3,7 +3,7 @@
 ###############################################################################
 FROM alpine:3.18
 
-LABEL maintainer="CROKETILLO (croketillo@gmail.com)
+LABEL maintainer="CROKETILLO (croketillo@gmail.com)"
 
 ENV VIRTUAL_ENV=/app/.venv \
     PATH="/app/.venv/bin:$PATH" \
@@ -17,7 +17,7 @@ RUN echo "**** install Python ****" && \
             python3~=3.11 && \
     rm -rf /var/lib/apt/lists/*
 
-COPY entrypoint.sh ./src /app/
+COPY /src /app
 
 RUN adduser \
     --disabled-password \
@@ -31,4 +31,4 @@ RUN adduser \
 WORKDIR /app
 USER app
 
-CMD ["/bin/sh", "/app/run.sh"]
+CMD ["/bin/sh", "/app/entrypoint.sh"]

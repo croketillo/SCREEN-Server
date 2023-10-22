@@ -1,7 +1,20 @@
 {
     "config": {
-        "SECRET_KEY": "YOUR_PASSWORD",
-        "PORT": 12345
+        "SECRET_KEY": "123456",
+        "PORT": "80"
     },
-    "images": [{"name": "promo2.jpg", "duration": 2}, {"name": "promo1.jpg", "duration": 2}, {"name": "promo3.jpg", "duration": 2}]
+    "images": [
+        {
+            "name": "promo2.jpg",
+            "duration": 5
+        },
+        {
+            "name": "promo1.jpg",
+            "duration": 5
+        },
+        {
+            "name": "promo3.jpg",
+            "duration": 10
+        }
+    ]
 }

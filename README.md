@@ -17,11 +17,18 @@ Prepare the images to be displayed in a directory. Keep in mind that the images 
 
 ```cd screen-server ```
 
+```pip install -r requirements.txt ```
+
 #### STEP 2 - Run config.sh and follow the instructions:
 
-```./config.sh```
 
-You has to specify the server port and a PASSWORD
+To enter the configuration menu:
+
+```python3 /src/config.py ```
+
+To upload new images you must enter the full path of the directory where you store your images locally. (Ex.  /home/user/new_images )
+
+[bold]Remember to restart the server so that the changes are applied if you are using docker[/bold]
 
 
 #### STEP 3 - Choose an execution mode:
@@ -40,21 +47,7 @@ You has to specify the server port and a PASSWORD
 
 ###### CHECK THE SERVER RUNNING 
 
-http://{YOUR_HOST}/get_images
-
-
-
-##### For update images:
-
-```./update_imges.sh```
-
-Then, specify the path where you store the images you want to display, and it will automatically ask you how long you want to display each image. The data is loaded into the "config.json" file.
-
-You can also do it manually by placing the images in the ./images folder and modifying the "config.json" file.
-
-
-
-docker restart {YOUR_CONTAINER}
+http://{YOUR_HOST}/get_image
 
 
 
