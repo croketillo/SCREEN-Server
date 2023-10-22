@@ -7,7 +7,7 @@ SCREEN-SERVER is an open-source client-server program that serves images through
 
 
 ## SERVER
-### First things first.
+### :exclamation: First things first.
 
 Prepare the images to be displayed in a directory. Keep in mind that the images should have the resolution and aspect ratio suitable for the screen where they will be displayed since SCREEN-CLIENT detects the screen and resizes them accordingly.
 
