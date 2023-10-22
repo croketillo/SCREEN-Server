@@ -8,12 +8,12 @@ services:
       - 8800:8800
     volumes:
       - ./src:/app
-# OPTIONAL
+# OPTIONAL FOR MULTI SECREENS with Traefik
 #    networks: 
 #      - proxy
     restart: unless-stopped
 
-#OPTIONAL
+#OPTIONAL FOR MULTI SCREENS with Traefik
 #networks:
 #   proxy:
 #     external: true

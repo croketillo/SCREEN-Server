@@ -1,5 +1,5 @@
 # SCREEN-SERVER
-# Version 1.1
+# Version 2.0
 
 # Create an HTTP server to serve images for advertising screens
 

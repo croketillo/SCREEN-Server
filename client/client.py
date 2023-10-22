@@ -1,6 +1,6 @@
 """
 		SCREEN-SERVER // CLIENT
-		Version 1.2
+		Version 2.0
 
 	       Client for SCREEN-Server
 
