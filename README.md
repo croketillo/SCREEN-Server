@@ -28,7 +28,7 @@ To enter the configuration menu:
 
 To upload new images you must enter the full path of the directory where you store your images locally. (Ex.  /home/user/new_images )
 
-**Remember to restart the server so that the changes are applied if you are using docker**
+***Remember to restart the server so that the changes are applied if you are using docker***
 
 
 #### STEP 3 - Choose an execution mode:
