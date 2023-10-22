@@ -31,6 +31,8 @@ To upload new images you must enter the full path of the directory where you sto
 ***Remember to restart the server so that the changes are applied if you are using docker***
 
 
+
+
 #### STEP 3 - Choose an execution mode:
 ##### Directly run the script
 
