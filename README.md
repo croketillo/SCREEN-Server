@@ -1,6 +1,6 @@
 ![LOGO](https://github.com/croketillo/SCREEN-Server/assets/131451882/90271619-16f1-4e9a-9938-f7be88d3d2c2)
 
-https://img.shields.io/badge/any_text-you_like-blue
+
 # SCREEN-SERVER
 
 SCREEN-SERVER is an open-source client-server program that serves images through an HTTP server for remote advertising screens.
