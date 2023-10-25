@@ -1,6 +1,6 @@
 ![LOGO](https://github.com/croketillo/SCREEN-Server/assets/131451882/90271619-16f1-4e9a-9938-f7be88d3d2c2)
 
-![GitHub Gist last commit](https://img.shields.io/github/gist/last-commit/:gistId)
+
 # SCREEN-SERVER
 
 SCREEN-SERVER is an open-source client-server program that serves images through an HTTP server for remote advertising screens.
