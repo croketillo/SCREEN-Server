@@ -57,6 +57,7 @@ http://{YOUR_HOST}/get_image
 
 The client is prepared to run on small Linux machines installed for promotional and marketing screens by running the Python script.
 
-Simply load the script  onto the client machine and specify the URL of the server; it will immediately load the images with the configuration loaded on the server indefinitely until you press ESC
+Simply load the script onto the client machine and specify the URL of the server; it will immediately load the images with the configuration loaded on the server indefinitely until you press ESC
 
+In /client/bin/linux is the binary file to execute directly.
 
