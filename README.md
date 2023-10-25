@@ -39,9 +39,9 @@ To upload new images you must enter the full path of the directory where you sto
 ```python3 screen.py```
 
 ##### DOCKER
-###### Create a Docker image with:
+###### Download a Docker image with:
 
-```docker build -t screen .```
+```docker pull croketillo/screen-server:2.0``` or ```docker build -t screen-server . ```
 
 ###### Start the Docker container with Docker-compose:
 
